@@ -1,3 +1,4 @@
+
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
@@ -9,6 +10,8 @@ import Features3 from '~/components/widgets/Features3.astro';
 
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
 
 const metadata = {
   title: 'Ethiraj Krishnamanaidu - Principal Data & AI Architect',
@@ -83,9 +86,9 @@ const metadata = {
           href: 'mailto:rajsoa@gmail.com',
         },
       },
-    ]}
+    ]} 
     image={{
-      src: '~/assets/images/Diya_Saree_Ceremony279.jpg',
+      src: '~/assets/images/Diya_Saree_Ceremony279.jpg',  // Fixed path
       alt: 'Ethiraj Krishnamanaidu',
       loading: 'eager',
     }}

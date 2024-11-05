@@ -72,7 +72,6 @@ export default defineConfig({
       config: './src/config.yaml',
     }),
   ],
-
   image: {
     domains: ['cdn.pixabay.com'],
     // Add this service configuration
@@ -85,12 +84,16 @@ export default defineConfig({
     remarkPlugins: [readingTimeRemarkPlugin],
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
-
   vite: {
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src'),
       },
+    },
+    base: '/astro-test/',  // This replaces assetsPrefix
+    publicDir: 'public',
+    css: {
+      devSourcemap: true,
     },
   },
 });
