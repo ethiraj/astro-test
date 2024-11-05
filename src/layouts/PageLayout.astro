@@ -1,6 +1,10 @@
 ---
 import Layout from '~/layouts/Layout.astro';
+import Header from '~/components/widgets/Header.astro';
+
 import Announcement from '~/components/widgets/Announcement.astro';
+
+import { headerData, footerData } from '~/navigation';
 
 import type { MetaData } from '~/types';
 
@@ -15,7 +19,9 @@ const { metadata } = Astro.props;
   <slot name="announcement">
     <Announcement />
   </slot>
-
+  <slot name="header">
+    <Header {...headerData} isSticky showRssFeed showToggleTheme />
+  </slot>
   <main>
     <slot />
   </main>
