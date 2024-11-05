@@ -22,6 +22,10 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
+
+  site: 'https://ethiraj.github.io',
+  base: '/astro-test', // Remove if using yourusername.github.io as repository name
+
   output: 'static',
 
   integrations: [
@@ -73,6 +77,10 @@ export default defineConfig({
 
   image: {
     domains: ['cdn.pixabay.com'],
+    // Add this service configuration
+    service: {
+      entrypoint: 'astro/assets/services/noop'  // Using noop instead of sharp to avoid the error
+    },
   },
 
   markdown: {
